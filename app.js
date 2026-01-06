@@ -592,10 +592,10 @@ const renderDetails = () => {
                         </div>
 
                         <div class="mt-auto pt-6 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <button onclick="window.open('https://www.youtube.com/results?search_query=${encodeURIComponent(trailerQuery)}', '_blank')" class="flex-1 bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-bold text-lg shadow-lg shadow-red-500/20 transition-all flex items-center justify-center gap-2">
+                            <button onclick="window.open('https://www.youtube.com/results?search_query=${encodeURIComponent(trailerQuery)}?target=external', '_blank')" class="flex-1 bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-bold text-lg shadow-lg shadow-red-500/20 transition-all flex items-center justify-center gap-2">
                                 <i data-lucide="youtube" class="w-5 h-5"></i> Watch Trailer
                             </button>
-                            <button onclick="window.open('https://www.youtube.com/results?search_query=${encodeURIComponent(movieQuery)}', '_blank')" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold text-lg shadow-lg shadow-blue-500/20 transition-all flex items-center justify-center gap-2">
+                            <button onclick="window.open('https://www.youtube.com/results?search_query=${encodeURIComponent(movieQuery)}?target=external', '_blank')" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold text-lg shadow-lg shadow-blue-500/20 transition-all flex items-center justify-center gap-2">
                                 <i data-lucide="play-circle" class="w-5 h-5"></i> Watch Full Movie
                             </button>
                         </div>
