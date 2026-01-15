@@ -498,7 +498,8 @@ const renderDetails = () => {
 
     // Simple search queries are often more effective
     const trailerQuery = `${movie.title} tamil trailer`;
-    const movieQuery = `${movie.title} tamil full movie`;
+    const isOld = movie.year && parseInt(movie.year) < 2000;
+    const movieQuery = isOld ? `old ${movie.title} tamil full movie` : `${movie.title} tamil full movie`;
 
     app.innerHTML = `
         <div class="animate-in fade-in duration-500 pb-10">
