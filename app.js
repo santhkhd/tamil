@@ -943,3 +943,4 @@ const toggleFavorite = (movie) => {
 
 // Initialize
 init();
+
