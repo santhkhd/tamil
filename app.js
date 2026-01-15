@@ -510,7 +510,15 @@ const renderDetails = () => {
                 <div class="md:flex">
                     <div class="md:w-1/3 lg:w-1/4 relative">
                         <div class="aspect-[2/3] w-full relative">
-                            <img src="${movie.poster}" alt="${movie.title}" class="w-full h-full object-cover">
+                            <img src="${movie.poster}" alt="${movie.title}" class="w-full h-full object-cover rounded-lg shadow-lg">
+                        </div>
+                        <div class="mt-4 space-y-3">
+                            <button onclick="window.open('https://www.youtube.com/results?search_query=${encodeURIComponent(movieQuery)}?target=external', '_blank')" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold text-lg shadow-lg shadow-blue-500/20 transition-all flex items-center justify-center gap-2">
+                                <i data-lucide="play-circle" class="w-5 h-5"></i> Watch Full Movie
+                            </button>
+                            <button onclick="window.open('https://www.youtube.com/results?search_query=${encodeURIComponent(trailerQuery)}?target=external', '_blank')" class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-bold text-lg shadow-lg shadow-red-500/20 transition-all flex items-center justify-center gap-2">
+                                <i data-lucide="youtube" class="w-5 h-5"></i> Watch Trailer
+                            </button>
                         </div>
                     </div>
 
@@ -591,14 +599,7 @@ const renderDetails = () => {
                             </div>
                         </div>
 
-                        <div class="mt-auto pt-6 border-t border-gray-100 dark:border-gray-800 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <button onclick="window.open('https://www.youtube.com/results?search_query=${encodeURIComponent(trailerQuery)}?target=external', '_blank')" class="flex-1 bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-bold text-lg shadow-lg shadow-red-500/20 transition-all flex items-center justify-center gap-2">
-                                <i data-lucide="youtube" class="w-5 h-5"></i> Watch Trailer
-                            </button>
-                            <button onclick="window.open('https://www.youtube.com/results?search_query=${encodeURIComponent(movieQuery)}?target=external', '_blank')" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold text-lg shadow-lg shadow-blue-500/20 transition-all flex items-center justify-center gap-2">
-                                <i data-lucide="play-circle" class="w-5 h-5"></i> Watch Full Movie
-                            </button>
-                        </div>
+
                     </div>
                 </div>
             </div>
