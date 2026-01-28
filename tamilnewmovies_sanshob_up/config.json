@@ -228,6 +228,12 @@
             "icon": "https://img.icons8.com/color/96/tv.png"
         },
         {
+            "name": "Movies",
+            "type": "MOVIES",
+            "url": "https://raw.githubusercontent.com/santhkhd/comalltamiltvliveshowsan/refs/heads/main/cofigfiles/movies_data.json",
+            "icon": "https://img.icons8.com/color/96/movie.png"
+        },
+        {
             "name": "Stream TV & Live",
             "type": "category",
             "url": "https://raw.githubusercontent.com/santhkhd/comalltamiltvliveshowsan/refs/heads/main/config/webdroitamitvshow/tv_channels.json",
