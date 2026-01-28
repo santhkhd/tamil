@@ -227,12 +227,7 @@
             "url": "home.json",
             "icon": "https://img.icons8.com/fluent/96/home.png"
         },
-        {
-            "name": "Trending Now",
-            "type": "latest_videos",
-            "url": "",
-            "icon": "https://img.icons8.com/fluent/96/fire-element.png"
-        },
+    
         {
             "name": "Cinema Collections",
             "type": "MOVIES",
@@ -325,3 +320,4 @@
     }
 
 }
+
