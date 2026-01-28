@@ -6,7 +6,7 @@
             "arguments": [
                 "https://raw.githubusercontent.com/santhkhd/comalltamiltvliveshowsan/refs/heads/main/cofigfiles/movies_data.json"
             ],
-            "image": "https://img.icons8.com/color/96/movie.png"
+            "image": "https://img.icons8.com/fluent/240/cinema.png"
         },
         {
             "title": "Digital Channels",
@@ -14,7 +14,13 @@
             "arguments": [
                 "youtube_categories.json"
             ],
-            "image": "https://img.icons8.com/color/96/youtube-play.png"
+            "image": "https://img.icons8.com/fluent/240/youtube-play--v1.png"
+        },
+        {
+            "title": "Trending Videos",
+            "provider": "latest_videos",
+            "arguments": [],
+            "image": "https://img.icons8.com/fluent/240/video-playlist.png"
         },
         {
             "title": "Stream TV & Live",
@@ -22,7 +28,7 @@
             "arguments": [
                 "tv_channels.json"
             ],
-            "image": "https://img.icons8.com/color/96/tv.png"
+            "image": "https://img.icons8.com/fluent/240/television.png"
         },
         {
             "title": "News Hub",
@@ -30,7 +36,7 @@
             "arguments": [
                 "tamilnews.json"
             ],
-            "image": "https://img.icons8.com/color/96/news.png"
+            "image": "https://img.icons8.com/fluent/240/news.png"
         },
         {
             "title": "Entertainment Box",
@@ -38,13 +44,13 @@
             "arguments": [
                 "comedy.json"
             ],
-            "image": "https://img.icons8.com/color/96/video.png"
+            "image": "https://img.icons8.com/fluent/240/theatre_mask.png"
         },
         {
             "title": "My Favorites",
             "provider": "favorites",
             "arguments": [],
-            "image": "https://img.icons8.com/color/96/hearts.png"
+            "image": "https://img.icons8.com/fluent/240/hearts.png"
         }
     ]
 }
