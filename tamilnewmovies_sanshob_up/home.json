@@ -22,12 +22,7 @@
             "arguments": [],
             "image": "https://img.icons8.com/fluent/240/video-playlist.png"
         },
-        {
-            "title": "Trending News",
-            "provider": "latest_news",
-            "arguments": [],
-            "image": "https://img.icons8.com/fluent/240/newspaper.png"
-        },
+
         {
             "title": "Stream TV & Live",
             "provider": "overview",
@@ -59,4 +54,5 @@
             "image": "https://img.icons8.com/fluent/240/hearts.png"
         }
     ]
+
 }
