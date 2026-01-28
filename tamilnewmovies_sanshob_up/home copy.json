@@ -1,0 +1,52 @@
+{
+    "overview": [
+        {
+            "title": "YouTube Channels",
+            "provider": "categories",
+            "arguments": [
+                "youtube_categories.json"
+            ],
+            "image": "https://img.icons8.com/color/96/youtube-play.png"
+        },
+        {
+            "title": "Live TV & Shows",
+            "provider": "categories",
+            "arguments": [
+                "live.json"
+            ],
+            "image": "https://img.icons8.com/color/96/tv.png"
+        },
+        {
+            "title": "Newspapers",
+            "provider": "categories",
+            "arguments": [
+                "tamilnews.json"
+            ],
+            "image": "https://img.icons8.com/color/96/news.png"
+        },
+        {
+            "title": "Top Stories",
+            "provider": "rss",
+            "arguments": [
+                "https://www.thehindu.com/news/national/?service=rss"
+            ],
+            "image": "https://img.icons8.com/color/96/hot-article.png"
+        },
+        {
+            "title": "HD movies",
+            "provider": "movies",
+            "arguments": [
+                "https://raw.githubusercontent.com/santhkhd/comalltamiltvliveshowsan/refs/heads/main/cofigfiles/movies_data.json"
+            ],
+            "image": "https://img.icons8.com/color/96/hot-article.png"
+        },
+        {
+            "title": "Latest Videos",
+            "provider": "json",
+            "arguments": [
+                "videos.json"
+            ],
+            "image": "https://img.icons8.com/color/96/video.png"
+        }
+    ]
+}

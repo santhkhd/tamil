@@ -10,11 +10,10 @@
         "user_agent": "",
         "privacy_policy_url": "https://sites.google.com/view/webdroid-privacy-policy",
         "more_apps_url": "https://codecanyon.net/user/solodroid/portfolio",
-        "webview_disclaimer_active": true,
         "redirect_url": ""
     },
     "intro": {
-        "status": false,
+        "status": true,
         "sliders": [
             {
                 "title": "Welcome to WebDroid",
@@ -218,31 +217,37 @@
     ],
     "menus": [
         {
-            "name": "Home",
+            "name": "home",
             "type": "category",
-            "url": "home.json",
+            "url": "https://raw.githubusercontent.com/santhkhd/comalltamiltvliveshowsan/refs/heads/main/config/webdroitamitvshow/home.json",
             "icon": "https://img.icons8.com/color/96/tv.png"
         },
         {
-            "name": "Stream TV & Live",
+            "name": "Live TV & Shows",
             "type": "category",
             "url": "https://raw.githubusercontent.com/santhkhd/comalltamiltvliveshowsan/refs/heads/main/config/webdroitamitvshow/tv_channels.json",
             "icon": "https://img.icons8.com/color/96/tv.png"
         },
         {
-            "name": "News Hub",
+            "name": "Newspapers",
             "type": "category",
             "url": "https://raw.githubusercontent.com/santhkhd/comalltamiltvliveshowsan/refs/heads/main/config/webdroitamitvshow/tamilnews.json",
             "icon": "https://img.icons8.com/color/96/news.png"
         },
         {
-            "name": "Entertainment Box",
+            "name": "Comedy",
             "type": "category",
             "url": "https://raw.githubusercontent.com/santhkhd/comalltamiltvliveshowsan/refs/heads/main/config/webdroitamitvshow/comedy.json",
             "icon": "https://img.icons8.com/color/96/video.png"
         },
         {
-            "name": "Digital Channels",
+            "name": "Top Stories",
+            "type": "rss",
+            "url": "https://www.thehindu.com/news/national/?service=rss",
+            "icon": "https://img.icons8.com/color/96/hot-article.png"
+        },
+        {
+            "name": "YouTube Channels",
             "type": "category",
             "url": "https://raw.githubusercontent.com/santhkhd/comalltamiltvliveshowsan/refs/heads/main/config/webdroitamitvshow/youtube_categories.json",
             "icon": "https://img.icons8.com/color/96/youtube-play.png"
@@ -258,10 +263,10 @@
         "ad_status": true,
         "main_ads": "admob",
         "backup_ads": "none",
-        "admob_banner_unit_id": "ca-app-pub-3940256099942544/6300978111",
+        "admob_banner_unit_id": "ca-app-pub-3940256099942544/9214589741",
         "admob_interstitial_unit_id": "ca-app-pub-3940256099942544/1033173712",
         "admob_native_unit_id": "ca-app-pub-3940256099942544/2247696110",
-        "admob_app_open_ad_unit_id": "ca-app-pub-3940256099942544/9257395915",
+        "admob_app_open_ad_unit_id": "ca-app-pub-3940256099942544/9257395921",
         "ad_manager_banner_unit_id": "/6499/example/banner",
         "ad_manager_interstitial_unit_id": "/6499/example/interstitial",
         "ad_manager_native_unit_id": "/6499/example/native",
@@ -290,7 +295,6 @@
         "native_ad_style_product_list": "medium",
         "native_ad_index": 4,
         "interstitial_ad_on_list_item_click": true,
-        "interstitial_ad_interval_on_list_item_click": 3,
         "placement": {
             "banner_home": true,
             "interstitial_drawer_menu": true,

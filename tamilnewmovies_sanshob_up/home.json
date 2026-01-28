@@ -1,0 +1,50 @@
+{
+    "overview": [
+        {
+            "title": "Cinema Collections",
+            "provider": "movies",
+            "arguments": [
+                "https://raw.githubusercontent.com/santhkhd/comalltamiltvliveshowsan/refs/heads/main/cofigfiles/movies_data.json"
+            ],
+            "image": "https://img.icons8.com/color/96/movie.png"
+        },
+        {
+            "title": "Digital Channels",
+            "provider": "overview",
+            "arguments": [
+                "youtube_categories.json"
+            ],
+            "image": "https://img.icons8.com/color/96/youtube-play.png"
+        },
+        {
+            "title": "Stream TV & Live",
+            "provider": "overview",
+            "arguments": [
+                "tv_channels.json"
+            ],
+            "image": "https://img.icons8.com/color/96/tv.png"
+        },
+        {
+            "title": "News Hub",
+            "provider": "overview",
+            "arguments": [
+                "tamilnews.json"
+            ],
+            "image": "https://img.icons8.com/color/96/news.png"
+        },
+        {
+            "title": "Entertainment Box",
+            "provider": "overview",
+            "arguments": [
+                "comedy.json"
+            ],
+            "image": "https://img.icons8.com/color/96/video.png"
+        },
+        {
+            "title": "My Favorites",
+            "provider": "favorites",
+            "arguments": [],
+            "image": "https://img.icons8.com/color/96/hearts.png"
+        }
+    ]
+}
