@@ -16,6 +16,14 @@
             ],
             "image": "https://img.icons8.com/fluent/240/youtube-play--v1.png"
         },
+          {
+            "title": "New Movies",
+            "image": "https://img.icons8.com/fluent/240/movie-ticket.png",
+            "provider": "webview",
+            "arguments": [
+                "https://santhkhd.github.io/tamilnew/tamil1/"
+            ]
+        },
         {
             "title": "Trending Videos",
             "provider": "latest_videos",
@@ -61,4 +69,5 @@
     ]
 
 }
+
 
