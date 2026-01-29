@@ -244,7 +244,7 @@
               {
             "name": "New Movies",
             "type": "url",
-            "url": "https://santhkhd.github.io/tamilnew/tamil1/",
+            "url": "https://santhkhd.github.io/tamilnew/tamil1/index.html",
             "icon": "https://img.icons8.com/fluent/96/movie-beginning.png"
         },
         {
@@ -339,6 +339,7 @@
     }
 
 }
+
 
 
 
