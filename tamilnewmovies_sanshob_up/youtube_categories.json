@@ -4,7 +4,7 @@
         "image": "https://img.icons8.com/color/96/comedy.png",
         "provider": "overview",
         "arguments": [
-            "comedy_channels.json"
+            "https://raw.githubusercontent.com/santhkhd/tamil/refs/heads/main/tamilnewmovies_sanshob_up/comedy_channels.json"
         ]
     },
     {
@@ -12,7 +12,7 @@
         "image": "https://img.icons8.com/color/96/music.png",
         "provider": "overview",
         "arguments": [
-            "music_channels.json"
+            "https://raw.githubusercontent.com/santhkhd/tamil/refs/heads/main/tamilnewmovies_sanshob_up/music_channels.json"
         ]
     },
     {
@@ -20,7 +20,7 @@
         "image": "https://img.icons8.com/color/96/news.png",
         "provider": "overview",
         "arguments": [
-            "news_channels.json"
+            "https://raw.githubusercontent.com/santhkhd/tamil/refs/heads/main/tamilnewmovies_sanshob_up/news_channels.json"
         ]
     },
     {
@@ -28,7 +28,7 @@
         "image": "https://img.icons8.com/color/96/tv.png",
         "provider": "overview",
         "arguments": [
-            "tv_channels.json"
+            "https://raw.githubusercontent.com/santhkhd/tamil/refs/heads/main/tamilnewmovies_sanshob_up/tv_channels.json"
         ]
     },
     {
@@ -36,7 +36,8 @@
         "image": "https://img.icons8.com/color/96/troll.png",
         "provider": "overview",
         "arguments": [
-            "troll_channels.json"
+            "https://raw.githubusercontent.com/santhkhd/tamil/refs/heads/main/tamilnewmovies_sanshob_up/troll_channels.json"
         ]
     }
+
 ]
