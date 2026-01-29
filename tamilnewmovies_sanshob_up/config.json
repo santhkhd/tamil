@@ -238,7 +238,7 @@
         {
             "name": "Home Dashboard",
             "type": "category",
-            "url": "https://raw.githubusercontent.com/santhkhd/tamil/refs/heads/main/tamilnewmovies_sanshob_up/home.json/home.json",
+            "url": "https://raw.githubusercontent.com/santhkhd/tamil/refs/heads/main/tamilnewmovies_sanshob_up/home.json",
             "icon": "https://img.icons8.com/fluent/96/home.png"
         },
         {
@@ -333,6 +333,7 @@
     }
 
 }
+
 
 
 
