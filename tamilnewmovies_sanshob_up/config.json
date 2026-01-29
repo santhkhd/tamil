@@ -245,7 +245,7 @@
             "name": "New Movies",
             "provider": "webview",
             "arguments": [
-                "https://santhkhd.github.io/tamilnew/tamil1/"
+                "https://santhkhd.github.io/tamilnew/tamil1/index.html"
             ],
             "image": "https://img.icons8.com/fluent/240/movie-beginning.png"
         },
@@ -341,6 +341,7 @@
     }
 
 }
+
 
 
 
