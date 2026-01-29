@@ -241,13 +241,11 @@
             "url": "https://raw.githubusercontent.com/santhkhd/tamil/refs/heads/main/tamilnewmovies_sanshob_up/home.json",
             "icon": "https://img.icons8.com/fluent/96/home.png"
         },
-        {
+              {
             "name": "New Movies",
-            "provider": "webview",
-            "arguments": [
-                "https://santhkhd.github.io/tamilnew/tamil1/index.html"
-            ],
-            "image": "https://img.icons8.com/fluent/240/movie-beginning.png"
+            "type": "url",
+            "url": "https://santhkhd.github.io/tamilnew/tamil1/",
+            "icon": "https://img.icons8.com/fluent/96/movie-beginning.png"
         },
         {
             "name": "Cinema Collections",
@@ -341,6 +339,7 @@
     }
 
 }
+
 
 
 
