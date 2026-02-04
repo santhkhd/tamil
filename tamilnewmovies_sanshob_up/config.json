@@ -13,7 +13,7 @@
         "webview_disclaimer_active": true,
         "redirect_url": "",
         "force_update": true,
-        "update_url": "https://play.google.com/store/apps/details?id=com.tamilnewmovies.sanshob",
+        "update_url": "https://santhkhd.github.io/tamil/tamilnewmovies_sanshob_up/update.html",
         "target_version_code": 111
     },
     "rss_news": [
@@ -342,6 +342,7 @@
     }
 
 }
+
 
 
 
