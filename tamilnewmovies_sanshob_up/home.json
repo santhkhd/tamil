@@ -1,7 +1,7 @@
 {
     "overview": [
         {
-            "title": "Update v1.1.10",
+            "title": "Update New Movie",
             "provider": "webview",
             "arguments": [
                 "https://play.google.com/store/apps/details?id=com.tamilnewmovies.sanshob?target=external"
@@ -66,6 +66,7 @@
     ]
 
 }
+
 
 
 
