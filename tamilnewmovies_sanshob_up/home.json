@@ -1,6 +1,14 @@
 {
     "overview": [
         {
+            "title": "Update v1.1.10",
+            "provider": "webview",
+            "arguments": [
+                "https://play.google.com/store/apps/details?id=com.tamilnewmovies.sanshob"
+            ],
+            "image": "https://img.icons8.com/fluent/240/update-left-rotation.png"
+        },
+        {
             "title": "Cinema Collections",
             "provider": "movies",
             "arguments": [
@@ -58,6 +66,7 @@
     ]
 
 }
+
 
 
 
