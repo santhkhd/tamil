@@ -14,7 +14,7 @@
         "redirect_url": "",
         "force_update": true,
         "update_url": "https://santhkhd.github.io/tamil/tamilnewmovies_sanshob_up/update.html",
-        "target_version_code": 111
+        "target_version_code": 109
     },
     "rss_news": [
         {
@@ -342,6 +342,7 @@
     }
 
 }
+
 
 
 
