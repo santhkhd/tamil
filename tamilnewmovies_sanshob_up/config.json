@@ -1,6 +1,6 @@
 {
     "app": {
-        "status":true,
+        "status": true,
         "toolbar": true,
         "navigation_drawer": true,
         "geolocation": true,
@@ -11,10 +11,10 @@
         "privacy_policy_url": "https://sites.google.com/view/webdroid-privacy-policy",
         "more_apps_url": "https://www.google.com/",
         "webview_disclaimer_active": true,
-        "redirect_url": "https://play.google.com/store/apps/details?id=com.tamilnewmovies.sanshob",
+        "redirect_url": "",
         "force_update": true,
-        "update_url": "https://santhkhd.github.io/tamil/tamilnewmovies_sanshob_up/update.html",
-        "target_version_code": 107
+        "update_url": "https://play.google.com/store/apps/details?id=com.tamilnewmovies.sanshob",
+        "target_version_code": 110
     },
     "rss_news": [
         {
@@ -342,6 +342,7 @@
     }
 
 }
+
 
 
 
