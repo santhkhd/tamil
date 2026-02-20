@@ -297,7 +297,7 @@
         "ad_status": true,
         "main_ads": "admob",
         "backup_ads": "none",
-        "admob_banner_unit_id": "ca-app-pub-8211285362401989/2478876602",
+        "admob_banner_unit_id": "ca-app-pub-1747879294813054/7839209251",
         "admob_interstitial_unit_id": "ca-app-pub-8211285362401989/2313588596",
         "admob_native_unit_id": "ca-app-pub-8211285362401989/4949127274",
         "admob_app_open_ad_unit_id": "ca-app-pub-8211285362401989/8687425254",
@@ -342,6 +342,7 @@
     }
 
 }
+
 
 
 
