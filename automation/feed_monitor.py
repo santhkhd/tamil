@@ -117,12 +117,18 @@ def monitor():
             # If we've seen this feed before but the ID is different
             if url in last_seen and last_seen[url] != latest['id']:
                 print(f"New content found in {feed['name']}: {latest['title']}")
-                send_onesignal_notification(
-                    title=f"New from {feed['name']}! 🔔",
-                    message=latest['title'],
-                    link=latest['link']
-                )
-                notifications_sent += 1
+                
+                # LIMIT TO 2 NOTIFICATIONS PER RUN
+                if notifications_sent < 2:
+                    send_onesignal_notification(
+                        title=f"New from {feed['name']}! 🔔",
+                        message=latest['title'],
+                        link=latest['link']
+                    )
+                    notifications_sent += 1
+                else:
+                    print(f"Skipping notification for {feed['name']} - Limit reached for this hour.")
+
             elif url not in last_seen:
                 print(f"Tracking new feed: {feed['name']}")
     
