@@ -295,8 +295,8 @@
     ],
     "ads": {
         "ad_status": true,
-        "main_ads": "fan",
-        "backup_ads": "none",
+        "main_ads": "admob",
+        "backup_ads": "fan",
          "admob_banner_unit_id": "ca-app-pub-8211285362401989/2478876602",
         "admob_interstitial_unit_id": "ca-app-pub-8211285362401989/2313588596",
         "admob_native_unit_id": "ca-app-pub-8211285362401989/4949127274",
