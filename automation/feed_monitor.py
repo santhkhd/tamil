@@ -10,7 +10,7 @@ ONESIGNAL_APP_ID = os.getenv('ONESIGNAL_APP_ID', 'YOUR_APP_ID_HERE')
 ONESIGNAL_REST_KEY = os.getenv('ONESIGNAL_REST_KEY', 'YOUR_REST_KEY_HERE')
 
 # PATHS
-ASSETS_DIR = 'tamilnewmovies_sanshob_up'
+ASSETS_DIR = 'app/src/main/assets'
 STATE_FILE = 'automation/last_seen.json'
 
 def send_onesignal_notification(title, message, link=None):
@@ -32,7 +32,7 @@ def send_onesignal_notification(title, message, link=None):
         payload["url"] = link  # Device opens this link when clicked
 
     try:
-        response = requests.post(url, headers=headers, data=json.dumps(payload))
+        response = requests.post(url, headers=headers, data=json.dumps(payload), timeout=10)
         print(f"Notification Status: {response.status_code} - {response.text}")
     except Exception as e:
         print(f"Error sending notification: {e}")
@@ -40,7 +40,9 @@ def send_onesignal_notification(title, message, link=None):
 def get_latest_item(feed_url):
     """Fetches the latest item from an RSS feed"""
     try:
-        feed = feedparser.parse(feed_url)
+        # Fetch with timeout to prevent hanging on hundreds of URLs
+        resp = requests.get(feed_url, timeout=10)
+        feed = feedparser.parse(resp.content)
         if feed.entries:
             latest = feed.entries[0]
             return {
@@ -49,7 +51,7 @@ def get_latest_item(feed_url):
                 'link': latest.get('link')
             }
     except Exception as e:
-        print(f"Error parsing feed {feed_url}: {e}")
+        pass # Silently fail on bad feeds to avoid spamming the log
     return None
 
 def monitor():
@@ -63,6 +65,10 @@ def monitor():
     feeds_to_check = []
 
     # 1. Check all JSON files in assets
+    if not os.path.exists(ASSETS_DIR):
+        print(f"Assets directory not found: {ASSETS_DIR}")
+        return
+
     for filename in os.listdir(ASSETS_DIR):
         if filename.endswith('.json'):
             path = os.path.join(ASSETS_DIR, filename)
@@ -70,13 +76,26 @@ def monitor():
                 with open(path, 'r', encoding='utf-8') as f:
                     data = json.load(f)
                     
-                    # Handle array-based feed lists (like news_channels.json)
+                    # Handle array-based feed lists (like news_channels.json, top_news_rss.json, alabama.json)
                     if isinstance(data, list):
                         for item in data:
-                            if item.get('provider') == 'rss' and 'arguments' in item:
+                            name = item.get('name') or item.get('title')
+                            # Skip if explicitly marked as webview or if there's no name
+                            if not name or item.get('provider') == 'webview':
+                                continue
+                                
+                            feed_url = None
+                            if item.get('provider') == 'rss' and 'arguments' in item and len(item['arguments']) > 0:
+                                feed_url = item['arguments'][0]
+                            elif 'rss_url' in item:
+                                feed_url = item['rss_url']
+                            elif 'url' in item:
+                                feed_url = item['url']
+                                
+                            if feed_url:
                                 feeds_to_check.append({
-                                    'name': item.get('title'),
-                                    'url': item['arguments'][0]
+                                    'name': name,
+                                    'url': feed_url
                                 })
                     
                     # Handle config.json structure
@@ -85,7 +104,7 @@ def monitor():
                         if 'rss_news' in data:
                             for item in data['rss_news']:
                                 feeds_to_check.append({
-                                    'name': item.get('title'),
+                                    'name': item.get('title', 'RSS News'),
                                     'url': item.get('url')
                                 })
                         # YouTube Channels
@@ -94,7 +113,7 @@ def monitor():
                                 channel_id = item.get('channel_id')
                                 rss_url = f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}"
                                 feeds_to_check.append({
-                                    'name': item.get('name'),
+                                    'name': item.get('name', 'YouTube Channel'),
                                     'url': rss_url
                                 })
             except Exception as e:
