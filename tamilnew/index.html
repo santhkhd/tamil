@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KoraPlay - Premium Movie Streaming</title>
+    <meta name="description"
+        content="Stream and download your favorite movies in full high definition. Search, sort, and browse hundreds of titles instantly.">
+
+    <!-- CSS stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Transparent blur header -->
+    <header>
+        <div class="logo-container">
+            <div class="logo">
+                <!-- SVG Play/Film Icon -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary);">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                Kora<span>Play</span>
+            </div>
+            <div class="logo-badge">Premium</div>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="movieSearch" class="search-input" placeholder="Search movies, actors, directors...">
+            <!-- Search icon SVG -->
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+        </div>
+
+        <div class="header-stats" id="totalMoviesCount">
+            Loading database...
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero section for featured movies (Populated by app.js) -->
+        <section id="heroSection" class="hero" style="background-image: url('');">
+            <div class="hero-content">
+                <span id="heroTagline" class="hero-tagline">Featured Movie</span>
+                <h1 id="heroTitle" class="hero-title">Select a Movie</h1>
+                <div class="hero-meta">
+                    <span id="heroYear" class="badge year">----</span>
+                    <span id="heroQuality" class="badge quality">HD</span>
+                    <span id="heroGenre" class="hero-genres">Drama, Thriller</span>
+                </div>
+                <p id="heroPlot" class="hero-plot">
+                    Loading plot details...
+                </p>
+                <div class="hero-buttons">
+                    <button id="heroPlayBtn" class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                        Watch Trailer
+                    </button>
+                    <button id="heroDetailsBtn" class="btn btn-secondary">More Details</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filters and controls wrapper -->
+        <div class="filters-wrapper">
+            <div class="filters-header">
+                <h2 class="section-title">Explore Catalog</h2>
+            </div>
+
+            <div class="controls-row">
+                <!-- Genre Chip Filters -->
+                <div class="chips-container" id="genreChipsContainer">
+                    <button class="chip active" data-genre="all">All Genres</button>
+                    <!-- JavaScript will insert genre chips here -->
+                </div>
+
+                <!-- Sorting control -->
+                <div class="sort-container">
+                    <span class="sort-label">Sort By:</span>
+                    <select id="sortBy" class="select-custom">
+                        <option value="recent">Recently Added</option>
+                        <option value="year-desc">Year (Newest)</option>
+                        <option value="year-asc">Year (Oldest)</option>
+                        <option value="title-asc">A to Z</option>
+                        <option value="title-desc">Z to A</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Movie Catalog Grid -->
+        <section class="movie-section">
+            <div class="movies-grid" id="moviesGrid">
+                <!-- Javascript will load and render card lists here -->
+                <div class="grid-message-container">
+                    <div class="spinner"></div>
+                    <p>Loading KoraPlay library...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Fullscreen dynamic video streaming modal -->
+    <div id="movieModal" class="modal">
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="modal-container">
+            <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <!-- Video Player (Left Panel) -->
+            <div class="modal-media-pane">
+                <div class="video-player-container">
+                    <video id="mainVideoPlayer" controls playsinline preload="none" poster="">
+                        <!-- Fallback message -->
+                        Your browser does not support HTML5 video streaming.
+                    </video>
+
+                    <!-- Player Error message panel -->
+                    <div id="playerErrorPanel" class="stream-error-msg" style="display: none;">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--error)"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            style="margin-bottom: 0.75rem;">
+                            <path
+                                d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                            </path>
+                            <line x1="12" y1="9" x2="12" y2="13"></line>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <h4>Unable to stream video</h4>
+                        <p id="playerErrorText">This media server is currently offline or cross-origin headers are
+                            restricting access.</p>
+                        <button class="btn btn-secondary" id="retryStreamBtn"
+                            style="padding: 0.4rem 1.2rem; font-size: 0.8rem;">Retry Playback</button>
+                    </div>
+                </div>
+
+                <!-- Custom inline buttons for player stream switches -->
+                <div class="player-controls-bar">
+                    <div
+                        style="font-size: 0.75rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">
+                        Select Quality Stream:
+                    </div>
+                    <div class="quality-selectors" id="qualitySelectors">
+                        <!-- Populated by JS -->
+                        <button class="quality-btn active">Auto</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Details Section (Right Panel) -->
+            <div class="modal-info-pane">
+                <div>
+                    <h3 id="modalMovieTitle" class="modal-title">Movie Title</h3>
+                    <div class="modal-quick-meta">
+                        <span id="modalYear" class="badge year">2026</span>
+                        <span id="modalQuality" class="badge quality">HDRip</span>
+                        <span id="modalGenre" style="color: var(--secondary);">Action, Thriller</span>
+                    </div>
+                </div>
+
+                <!-- Plot -->
+                <div class="info-group">
+                    <span class="info-label">Plot Synopsis</span>
+                    <p id="modalPlot" class="info-plot">No plot available for this movie.</p>
+                </div>
+
+                <!-- Cast and Crew details -->
+                <div class="info-group" id="modalActorsGroup">
+                    <span class="info-label">Starring</span>
+                    <span id="modalActors" class="info-value">Actor names...</span>
+                </div>
+
+                <div class="info-group" id="modalDirectorGroup">
+                    <span class="info-label">Director</span>
+                    <span id="modalDirector" class="info-value">Director name...</span>
+                </div>
+
+                <div class="info-group" id="modalMusicGroup">
+                    <span class="info-label">Music Composer</span>
+                    <span id="modalMusic" class="info-value">Music Composer name...</span>
+                </div>
+
+                <div class="info-group" id="modalProductionGroup">
+                    <span class="info-label">Production & Country</span>
+                    <span id="modalProduction" class="info-value">India</span>
+                </div>
+
+                <!-- Downloads area -->
+                <div class="downloads-section">
+                    <div
+                        style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--secondary); display: flex; align-items: center; gap: 0.4rem;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Available Downloads
+                    </div>
+                    <div id="downloadsList">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Website footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo-container">
+                <div class="logo">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                    Kora<span>Play</span>
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Home</a>
+                <a href="#" class="footer-link">Terms of Use</a>
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Contact Support</a>
+            </div>
+        </div>
+        <div class="footer-text"
+            style="text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.03); padding-top: 1rem;">
+            &copy; 2026 KoraPlay. All rights reserved. Created with high performance client-side streaming engine.
+        </div>
+    </footer>
+
+    <!-- App JavaScript file -->
+    <script src="app.js"></script>
+</body>
+
+</html>
